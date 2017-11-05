@@ -1,588 +1,208 @@
-<html><head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Craftsmanship</title>
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<style>
-
-  /* demo styles
-  --------------------------------------------- */
-
-  body {
-    font: 120% / 1.5 Arial;
-    scroll-behavior: smooth;
-  }
-
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  @font-face {
-    font-family: 'de_valenciaregular';
-    src: url('De Valencia (beta)-webfont.eot');
-    src: url('De Valencia (beta)-webfont.eot?#iefix') format('embedded-opentype'),
-         url('De Valencia (beta)-webfont.woff2') format('woff2'),
-         url('De Valencia (beta)-webfont.woff') format('woff'),
-         url('De Valencia (beta)-webfont.ttf') format('truetype'),
-         url('De Valencia (beta)-webfont.svg#de_valenciaregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-    }
-
-
-.emblem {
-    animation: spinZ 20s linear infinite;
-    text-align: center;
-
-    span {
-        position: absolute;
-        display: inline-block;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        text-transform: uppercase;
-        font-size: 5vh;
-        transition: all .5s cubic-bezier(0,0,0,1);
-    }
-
-    @keyframes spinZ {
-        0% {
-            transform: rotateZ(360deg);
-        }
-        100% {
-            transform: rotateZ(0deg);
-        }
-    }
-}    
-
-
-    h1 {
-        font-size: 275%;
-        font-family: 'de_valenciaregular', Arial, sans-serif;
-
-    }
-
-    h1.parallax-title{
-        color:white;
-        font-size: 10vw;
-        font-family: 'de_valenciaregular', Arial, sans-serif;
-    }
-
-    @media (min-width: 715px) {
-        h1.parallax-title{
-        color:white;
-        font-size: 7.5vw;
-        font-family: 'de_valenciaregular', Arial, sans-serif;
-    }
-    }
-    @media (min-width: 1400px) {
-        h1.parallax-title{
-        color:white;
-        font-size: 500%;
-        font-family: 'de_valenciaregular', Arial, sans-serif;
-    }
-    }
-
-
-
-   
-
-
-
-
-
-  /* demo nav bar
-  --------------------------------------------- */
-
-  /*.nav {
-    position: fixed;
-    z-index: 100;
-    right: 1em;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    display: none;
-  }
-  .nav li {
-    list-style: none;
-    margin: .5em;
-  }
-  .nav a {
-    display: inline-block;
-    padding: .5em 1em;
-    color: #fff;
-    border-radius: 3px;
-    background: rgba(0,0,0,.6);
-  }
-  .nav a:not(:hover) {
-    text-decoration: none;
-  }*/
-
-#mainNav {
-  border-color: rgba(34, 34, 34, 0.05);
-  background-color: white;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  transition: all 0.2s; }
-  #mainNav .navbar-brand {
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #F05F40;
-    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; }
-    #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
-      color: #f05f40; }
-  #mainNav .navbar-toggle {
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #222222; }
-  #mainNav .navbar-nav > li.nav-item > a.nav-link:focus,
-  #mainNav .navbar-nav > li.nav-item > a.nav-link {
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #222222; }
-    #mainNav .navbar-nav > li.nav-item > a.nav-link:focus:hover,
-    #mainNav .navbar-nav > li.nav-item > a.nav-link:hover {
-      color: #F05F40; }
-    #mainNav .navbar-nav > li.nav-item > a.nav-link:focus.active,
-    #mainNav .navbar-nav > li.nav-item > a.nav-link.active {
-      color: #F05F40 !important;
-      background-color: transparent; }
-      #mainNav .navbar-nav > li.nav-item > a.nav-link:focus.active:hover,
-      #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
-        background-color: transparent; }
-  @media (min-width: 992px) {
-    #mainNav {
-      border-color: rgba(255, 255, 255, 0.3);
-      background-color: transparent; }
-      #mainNav .navbar-brand {
-        color: rgba(255, 255, 255, 0.7); }
-        #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
-          color: white; }
-      #mainNav .navbar-nav > li.nav-item > a.nav-link,
-      #mainNav .navbar-nav > li.nav-item > a.nav-link:focus {
-        color: rgba(255, 255, 255, 0.7); }
-        #mainNav .navbar-nav > li.nav-item > a.nav-link:hover,
-        #mainNav .navbar-nav > li.nav-item > a.nav-link:focus:hover {
-          color: white; }
-      #mainNav.navbar-shrink {
-        border-color: rgba(34, 34, 34, 0.05);
-        background-color: white; }
-        #mainNav.navbar-shrink .navbar-brand {
-          font-size: 16px;
-          color: #F05F40; }
-          #mainNav.navbar-shrink .navbar-brand:focus, #mainNav.navbar-shrink .navbar-brand:hover {
-            color: #f05f40; }
-        #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link,
-        #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:focus {
-          color: #222222; }
-          #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:hover,
-          #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:focus:hover {
-            color: #F05F40; } }
-
-    .fontnav{
-        font-family: 'de_valenciaregular', Arial, sans-serif;
-        font-size: 150%;
-    }
-
-    .fontnavtitle{
-        font-family: 'de_valenciaregular', Arial, sans-serif;
-        font-size: 150%;
-    }
-
-
-  /* slide layout */
-
-#slide-1-title{
-    line-height: 40vh;
-}
-#slide-3-title{
-    line-height: 50px;
-}
-#slide-5-title{
-    line-height: 50px;
-}
-  .slide {
-    position: relative;
-    padding: 8% 0;
-  }
-  .slide__content {
-        max-width: 1200px;
-        margin: auto;
-  }
-  .slide__text, .slide__image {
-    padding: 8%;
-  }
-  .slide__image {
-    display: block;
-    width: 100%;
-    max-width: 400px;
-    margin: auto;
-    position:center;
-  }
-  .slide__bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-  }
-
-  /* slide backgrounds */
-
-  #slide-1 .slide__bg {
-    background-image: url("img/image_1.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-
-  }  
-  #slide-2 .slide__bg {
-    background-color: #eff1f2;
-  }
-  #slide-3 .slide__bg {
-    background-image:  url("img/banniere_2.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-
-    
-  }
-  #slide-4 .slide__bg {
-    background-color: #eff1f2;
-    
-  } 
-
-  #slide-5 .slide__bg {
-    background-image:  url("img/image_2.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
-  #slide-6 .slide__bg {
-    background-color: #eff1f2;
-  }
-
-  #slide-7 .slide__bg {
-    background-image:  url("img/image_3.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
-  #slide-8 .slide__bg {
-    background-color: #eff1f2;
-  }
-
-  #slide-9 .slide__bg {
-    background-image:  url("img/image_3.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
-  #slide-10 .slide__bg {
-    background-color: #eff1f2;
-  }
-
-
-  /* misc */
-
-  .demo__info {
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    font-size: 80%;
-    text-align: center;
-    background: rgba(255,255,255,.5);
-    padding: 0.5em;
-    z-index: 100;
-  }
-
-
-
-.shadow {
-    -webkit-box-shadow: 0px 1px 100px -15px black;
-    -moz-box-shadow: 0px 1px 100px -15px black;
-    box-shadow: 0px 1px 100px -15px black;
-}
-
-
-
-  /* Large screen layout */  
-  
-  @media screen and (min-width: 45em) {
-
-    .slide__content {
-      display: -webkit-flex;
-      display: flex;
-      align-items: center;
-    }
-    .slide__image, .slide__text {
-      padding: 3%;
-      -webkit-flex: 1;
-      flex: 1;
-    } 
-    .slide:nth-child(2n) .slide__text {
-      -webkit-order: 1;
-      order: 1;
-    }
-    .nav {
-      display: block;
-    }
-
-
-    /* parallax */
-
-
-    @supports ((perspective: 1px) and (not (-webkit-overflow-scrolling: touch))) {
-
-      html, body {
-        overflow: hidden;
-        height: 100%;
-      }
-      body {
-        transform: translateZ(0px); /* Fix paint issues in Edge && Safari H/W acceleration */
-      }
-      .slides {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        overflow-x: hidden;
-        overflow-y: auto;
-        perspective: 300px;
-        scroll-behavior: smooth;
-      }
-      .slide, .slide__content {
-        transform-style: preserve-3d;
-      }
-      .slide__text {
-        transform: translateZ(60px) scale(.8);
-        transform-origin: 100% 50%;
-
-      }
-      .slide:nth-child(2n) .slide__image {
-        transform: translateZ(100px) scale(.67);
-        transform-origin: 100% 50%;
-      }
-      .slide:nth-child(2n) .slide__text {
-        transform-origin: 0% 50%;
-      }
-      .slide:nth-child(2n) .slide__bg {
-        transform: translateZ(59px) ;
-      }
-      .slide:nth-child(2n+1):not(:first-child) .slide__bg {
-        top: -50%;
-      }
-      .slide:nth-child(2n+1):not(:last-child) .slide__bg {
-        bottom: -50%;
-      }
-      .slide:first-child {
-        padding-top: 14%;
-      }
-      .slide:last-child {
-        padding-bottom: 14%;
-      }
-      .slide:nth-child(2n) {
-        z-index: 1; /* ensure slides overlay correctly */
-      }
-    }
-  }
-  .emblem {
-    animation: spinZ 20s linear infinite;
-    text-align: center;
-
-    span {
-        position: absolute;
-        display: inline-block;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        text-transform: uppercase;
-        font-size: 5vh;
-        transition: all .5s cubic-bezier(0,0,0,1);
-    }
-
-    @keyframes spinZ {
-        0% {
-            transform: rotateZ(360deg);
-        }
-        100% {
-            transform: rotateZ(0deg);
-        }
-    }
-}
-</style>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craftsmanship</title>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 
 <body>
-  <!-- svg is defined here because of a Safari bug with <use> -->
 
-
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <!-- Here we start out with the bootstrap navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand fontnavtitle" href="#">Craftsmanship</a>
+        <a class="navbar-brand fontnavtitle" href="#navtrickTop">Craftsmanship</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto ">
-            <li class="nav-item active ">
-              <a class="nav-link" href="#">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#navtrick-1">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#navtrick-2">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#navtrick-3">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
 
-  <div class="slides">
+            <li class="nav-item">
+              <a class="nav-link" href="#navtrick-1">Our craft</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#navtrick-2">Jewelry</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#navtrick-3">Collection</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#navtrick-4">Watches</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#navtrick-5">Contact</a>
+          </li>
+      </ul>
+  </div>
+</div>
+</nav>
+<!-- we start putting up real content while establishing the bases of our parallax effect in doing so through classes -->
+<div class="slides">
     <div class="slide" id="slide-1">
       <div class="slide__bg"></div>
       <div class="slide__content">
-        <div class="slide__text">
-          <h1 class="parallax-title emblem" id="slide-1-title">Craftsmanship</h1>
-         
-        </div>
-       
-      </div> <div id="navtrick-1"></div>
-    </div>
+        <div class="slide__text" id="navtrickTop">
+          <h1 class="parallax-title" id="slide-1-title">Craftsmanship</h1>
 
-    <div class="slide" id="slide-2">
-      <div class="slide__bg shadow"></div>
-      <div class="slide__content ">
-        <div class="slide__text "> 
-          <h1 id="slide-2-title">Our craft</h1>
-          <br>
-          <p>Dedicated craftsmen hailing from various nations and lifestyles, we united under one single pretense: Creation. <br>For this is what ties us craftsmen together and pushes us to go beyond our artistical limit and bring our craft to another level.  One where each and every piece will be thorougly planned and one of a kind. In our pursuit of perfection, we will only create unique pieces of craftsmanship. </p>
-        </div>
-        <div class="slide__image">
-            <img src="img/forge.jpg" alt="thing" class="rounded-circle" width="100%">
-          <!--  <img src="https://www.bobijoo.fr/988-thickbox/chevaliere-master-argent-BA0018.jpg">  -->
-        </div>
       </div>
-    </div>
 
-    <div class="slide" id="slide-3">
-      <div class="slide__bg"></div>
-      <div class="slide__content">
-        <div class="slide__text">
-          <h1 class="parallax-title" id="slide-3-title">Jewelry</h1>
+  </div> <div id="navtrick-1"></div>  <!-- the internal navigation will come and go through such divs -->
+</div>
 
-        </div>
-        <div id="navtrick-2"></div>
-      </div>
-    </div>
-
-    <div class="slide" id="slide-4">
-      <div class="slide__bg shadow"></div>
-      <div class="slide__content">
-        <div class="slide__text">
-          <h1 id="slide-4-title">Our Jewels</h1>
-          <p>Dedicated craftsmen hailing from various nations and lifestyles, we united under one single pretense: Creation. <br>For this is what ties us craftsmen together and pushes us to go beyond our artistical limit and bring our craft to another level.  One where each and every piece will be thorougly planned and one of a kind. In our pursuit of perfection, we will only create unique pieces of craftsmanship. </p>
-        </div>
-        <div class="slide__image">
-            <img src="https://img1.etsystatic.com/016/0/6099693/il_340x270.409229711_f4pr.jpg" alt="thing" class="rounded-circle" width="100%">
-          <!--  <img src="https://www.bobijoo.fr/988-thickbox/chevaliere-master-argent-BA0018.jpg">  -->
-        </div>
-      </div>
-    </div>
-
-    <div class="slide" id="slide-5">
-      <div class="slide__bg"></div>
-      <div class="slide__content">
-        <div class="slide__text">
-          <h1 class="parallax-title" id="slide-5-title">Unique weapons</h1>
-         
-        </div>
-        <div id="navtrick-3"></div>
-      </div>
-    </div>
-
-    <div class="slide" id="slide-6">
-      <div class="slide__bg shadow"></div>
-      <div class="slide__content">
-        <div class="slide__text">
-          <h1 id="slide-6-title">Our Weapons of Collection</h1>
-          <p>Dedicated craftsmen hailing from various nations and lifestyles, we united under one single pretense: Creation. <br>For this is what ties us craftsmen together and pushes us to go beyond our artistical limit and bring our craft to another level.  One where each and every piece will be thorougly planned and one of a kind. In our pursuit of perfection, we will only create unique pieces of craftsmanship. </p>
-        </div>
-        <div class="slide__image">
-            <img src="img/weapon.jpg" alt="thing" class="rounded-circle" width="100%">
-          <!--  <img src="https://www.bobijoo.fr/988-thickbox/chevaliere-master-argent-BA0018.jpg">  -->
-        </div>
-      </div>
-    </div>
-
-    <div class="slide" id="slide-7">
-      <div class="slide__bg"></div>
-      <div class="slide__content">
-        <div class="slide__text">
-          <h1 class="parallax-title" id="slide-5-title">Watches</h1>
-         
-        </div>
-        <div id="navtrick-3"></div>
-      </div>
-    </div>
-
-    <div class="slide" id="slide-8">
-      <div class="slide__bg shadow"></div>
-      <div class="slide__content">
-        <div class="slide__text">
-          <h1 id="slide-6-title">Our Watches</h1>
-          <p>Dedicated craftsmen hailing from various nations and lifestyles, we united under one single pretense: Creation. <br>For this is what ties us craftsmen together and pushes us to go beyond our artistical limit and bring our craft to another level.  One where each and every piece will be thorougly planned and one of a kind. In our pursuit of perfection, we will only create unique pieces of craftsmanship. </p>
-        </div>
-        <div class="slide__image">
-            <img src="img/montre.jpg" alt="thing" class="rounded-circle" width="100%">
-          <!--  <img src="https://www.bobijoo.fr/988-thickbox/chevaliere-master-argent-BA0018.jpg">  -->
-        </div>
-      </div>
-    </div>
-
-    <div class="slide" id="slide-9">
-      <div class="slide__bg"></div>
-      <div class="slide__content">
-        <div class="slide__text">
-          <h1 class="parallax-title" id="slide-5-title">TEST</h1>
-         
-        </div>
-        <div id="navtrick-3"></div>
-      </div>
-    </div>
-
-    <div class="slide" id="slide-10">
-      <div class="slide__bg shadow"></div>
-      <div class="slide__content">
-        <div class="slide__text">
-          <h1 id="slide-6-title">test</h1>
-          <p>Dedicated craftsmen hailing from various nations and lifestyles, we united under one single pretense: Creation. <br>For this is what ties us craftsmen together and pushes us to go beyond our artistical limit and bring our craft to another level.  One where each and every piece will be thorougly planned and one of a kind. In our pursuit of perfection, we will only create unique pieces of craftsmanship. </p>
-        </div>
-        <div class="slide__image">
-            <img src="https://i.pinimg.com/originals/8c/b6/10/8cb610ea20e09c435d6d069c5187ce6e.jpg" alt="thing" class="rounded-circle" width="100%">
-          <!--  <img src="https://www.bobijoo.fr/988-thickbox/chevaliere-master-argent-BA0018.jpg">  -->
-        </div>
-      </div>
-    </div>
-
+<div class="slide" id="slide-2">
+  <div class="slide__bg shadow"></div>
+  <div class="slide__content ">
+    <div class="slide__text "> 
+      <h1 id="slide-2-title">Our craft</h1>
+      <br>
+      <p>Dedicated craftsmen hailing from various nations and lifestyles, we united under one single pretense: Creation. <br>For this is what ties us craftsmen together and pushes us to go beyond our artistical limit and bring our craft to another level.  One where each and every piece will be thorougly planned and one of a kind. In our pursuit of perfection, we will only create unique pieces of craftsmanship. </p>
   </div>
 
+  <!-- Our image/gallery link has its own parallax effect, making it follow a bit after the text on its right side -->
+  <div class="slide__image">
+    <a href="#" class="container"> <!-- Of course, the link doesn't lead to anything -->
+       <img src="img/forge.jpg" alt="Craft" class="rounded-circle image" width="100%"> <!-- we very easily make the image shaped round through a bootstrap class -->
+       <div class="middle">
+         <div class="text">Gallery</div>
+     </div>
+ </a>
+</div>
+</div>
+</div>
+
+<div class="slide" id="slide-3">
+  <div class="slide__bg"></div>
+  <div class="slide__content">
+    <div class="slide__text">
+      <h1 class="parallax-title" id="slide-3-title">Jewelry</h1>
+
+  </div>
+  <div id="navtrick-2"></div>
+</div>
+</div>
+
+<div class="slide" id="slide-4">
+  <div class="slide__bg shadow"></div>
+  <div class="slide__content">
+    <div class="slide__text">
+      <h1 id="slide-4-title">Our Jewels</h1>
+      <br>
+      <p>Our craftsmen deliver pieces of jewelry on an average basis of up to 10 new and unique products per week. These jewels range from a simple tiara to very refined signet rings. Those artworks and the gender targeted are both decided by the artist which will, as always, leave a pamphlet concerning all the detail of this unique jewel.</p>
+  </div>
+  <div class="slide__image">
+    <a href="#" class="container">
+       <img src="img/ring.jpg" alt="Jewels" class="rounded-circle image" width="100%">
+       <div class="middle">
+         <div class="text">Gallery</div>
+     </div>
+ </a>
+</div>
+</div>
+</div>
+
+<div class="slide" id="slide-5">
+  <div class="slide__bg"></div>
+  <div class="slide__content">
+    <div class="slide__text">
+      <h1 class="parallax-title" id="slide-5-title">Unique weapons</h1>
+
+  </div>
+  <div id="navtrick-3"></div>
+</div>
+</div>
+
+<div class="slide" id="slide-6">
+  <div class="slide__bg shadow"></div>
+  <div class="slide__content">
+    <div class="slide__text">
+      <h1 id="slide-6-title">Our Weapons of Collection</h1>
+      <br>
+      <p>The forges burn endlessly in our pursuit of perfection. However, only 3 unique weapons of collections will make it out each week. For such works require a high amount of time, effort, and planning ; the likes of which you will be able to buy directly from its craftman if you so desire. </p>
+  </div>
+  <div class="slide__image">
+    <a href="#" class="container">
+       <img src="img/weapon.jpg" alt="Weapons Of Collection" class="rounded-circle image" width="100%">
+       <div class="middle">
+         <div class="text">Gallery</div>
+     </div>
+ </a>
+</div>
+</div>
+</div>
+
+<div class="slide" id="slide-7">
+  <div class="slide__bg"></div>
+  <div class="slide__content">
+    <div class="slide__text">
+      <h1 class="parallax-title" id="slide-5-title">Watches</h1>
+
+  </div>
+  <div id="navtrick-4"></div>
+</div>
+</div>
+
+<div class="slide" id="slide-8">
+  <div class="slide__bg shadow"></div>
+  <div class="slide__content">
+    <div class="slide__text">
+      <h1 id="slide-6-title">Our Watches</h1>
+      <br>
+      <p>No amount of words will suffice to describe the calm and meticulousness of out watchcrafters. With years of experience under their belt, they do not limit themselves to anything and keep trying to reach new heights in their art. Up to 4 new watches will get released every week. Custom orders have more chances to get validated by them than by our other crafters. As such, do not hesitate to use the contact form below to reach out to us. </p>
+  </div>
+  <div class="slide__image">
+    <a href="#" class="container">
+       <img src="img/montre.jpg" alt="Watch" class="rounded-circle image" width="100%">
+       <div class="middle">
+         <div class="text">Gallery</div>
+     </div>
+ </a>
+</div>
+</div>
+</div>
+
+<div class="slide" id="slide-9">
+  <div class="slide__bg"></div>
+  <div class="slide__content">
+    <div class="slide__text">
+      <h1 class="parallax-title" id="slide-5-title">Contact us</h1>
+
+  </div>
+  <div id="navtrick-5"></div>
+</div>
+</div>
+
+<div class="slide" id="slide-10">
+  <div class="slide__bg shadow"></div>
+  <div class="slide__content">
+    <div class="slide__text">
+      <form action="https://formspree.io/your@email.com"
+      method="POST">
+      <h2>Name</h2>
+      <input type="text" name="name" required><br/><br/>
+      <h2>Email</h2>
+      <input type="email" name="_replyto" required><br/><br/>
+      <h2>Content</h2>
+      <textarea type="text" name="inputMessage" class="formMessage" rows="5" required></textarea><br/><br/><br/>
+
+      <input type="submit" class="submitButton" value="Send">
+  </form> 
+</div>
+<div class="slide__image">
+    <a href="#" class="container">
+       <img src="img/contact.jpg" alt="Contact us" class="rounded-circle image" width="100%">
+       <div class="middle">
+         <div class="text">Gallery</div>
+     </div>
+ </a>
+</div>
+</div>
+</div>    
+</div>
 <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="https://codepen.io/georgehastings/pen/akZxaz.js"></script>
-</body></html>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
