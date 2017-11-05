@@ -1,0 +1,410 @@
+  
+/* Body and various text size and font*/
+
+body {
+  font: 120% / 1.5 Arial;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: 'de_valenciaregular';
+  src: url('De Valencia (beta)-webfont.eot');
+  src: url('De Valencia (beta)-webfont.eot?#iefix') format('embedded-opentype'),
+  url('De Valencia (beta)-webfont.woff2') format('woff2'),
+  url('De Valencia (beta)-webfont.woff') format('woff'),
+  url('De Valencia (beta)-webfont.ttf') format('truetype'),
+  url('De Valencia (beta)-webfont.svg#de_valenciaregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+h1 {
+  font-size: 175%;
+  font-family: 'de_valenciaregular', Arial, sans-serif;
+
+}
+
+@media (min-width: 715px) {
+  h1 {
+    font-size: 275%;
+    font-family: 'de_valenciaregular', Arial, sans-serif;
+
+  }
+}
+
+h1.parallax-title{
+  color:white;
+  font-size: 10vw;
+  font-family: 'de_valenciaregular', Arial, sans-serif;
+}
+
+@media (min-width: 715px) {
+  h1.parallax-title{
+    color:white;
+    font-size: 7.5vw;
+    font-family: 'de_valenciaregular', Arial, sans-serif;
+  }
+}
+@media (min-width: 1400px) {
+  h1.parallax-title{
+    color:white;
+    font-size: 500%;
+    font-family: 'de_valenciaregular', Arial, sans-serif;
+  }
+}
+
+h2 {
+  font-size: 160%;
+  color: #f9fbfc;
+  font-family: 'de_valenciaregular', Arial, sans-serif;
+}
+
+
+/* Slides layout */
+
+#slide-1-title{
+  line-height: 40vh;
+}
+#slide-3-title{
+  line-height: 50px;
+}
+#slide-5-title{
+  line-height: 50px;
+}
+.slide {
+  position: relative;
+  padding: 8% 0;
+}
+.slide__content {
+  max-width: 1200px;
+  margin: auto;
+}
+.slide__text, .slide__image {
+  padding: 8%;
+}
+
+.slide__image {
+  display: block;
+  width: 100%;
+  max-width: 250px;
+  margin: auto;
+  position:center;
+}
+
+@media (min-width: 992px) {
+  .slide__image {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    position:center;
+  }
+}
+.slide__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+/* Slides backgrounds */
+
+#slide-1 .slide__bg {
+  background-image: url("../img/image_1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}  
+#slide-2 .slide__bg {
+  background-color: #eff1f2;
+}
+#slide-3 .slide__bg {
+  background-image:  url("../img/banniere_2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;  
+}
+#slide-4 .slide__bg {
+  background-color: #eff1f2;
+  
+} 
+
+#slide-5 .slide__bg {
+  background-image:  url("../img/image_2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#slide-6 .slide__bg {
+  background-color: #eff1f2;
+}
+
+#slide-7 .slide__bg {
+  background-image:  url("../img/image_3.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#slide-8 .slide__bg {
+  background-color: #eff1f2;
+}
+
+#slide-9 .slide__bg {
+  background-image:  url("../img/image_4.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#slide-10 .slide__bg {
+  background-color: #27292b;
+}
+
+
+/* Shadow effect between slides */
+
+
+.shadow {
+  -webkit-box-shadow: 0px 1px 100px -15px black;
+  -moz-box-shadow: 0px 1px 100px -15px black;
+  box-shadow: 0px 1px 100px -12px black;
+}
+
+
+
+/* Large screen layout */  
+
+@media screen and (min-width: 45em) {
+
+  .slide__content {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+  }
+  .slide__image, .slide__text {
+    padding: 3%;
+    -webkit-flex: 1;
+    flex: 1;
+  } 
+  .slide:nth-child(2n) .slide__text {
+    -webkit-order: 1;
+    order: 1;
+  }
+  .nav {
+    display: block;
+  }
+
+
+  /* Parallax effect with CSS */
+  /* Here I give each kind of element of my website a different Z position as to modify its depth and scale it back to its normal size*/
+
+
+  @supports ((perspective: 1px) and (not (-webkit-overflow-scrolling: touch))) {
+
+    html, body {
+      overflow: hidden;
+      height: 100%;
+    }
+    body {
+      transform: translateZ(0px); /* Apparently fixes paint issues in Edge && Safari H/W acceleration */
+    }
+    .slides {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      perspective: 300px;
+      scroll-behavior: smooth;
+    }
+    .slide, .slide__content {
+      transform-style: preserve-3d;
+    }
+    .slide__text {
+      transform: translateZ(60px) scale(.8);
+      transform-origin: 100% 50%;
+
+    }
+    .slide:nth-child(2n) .slide__image {
+      transform: translateZ(100px) scale(.67);
+      transform-origin: 100% 50%;
+    }
+    .slide:nth-child(2n) .slide__text {
+      transform-origin: 0% 50%;
+    }
+    .slide:nth-child(2n) .slide__bg {
+      transform: translateZ(59px) ;
+    }
+    .slide:nth-child(2n+1):not(:first-child) .slide__bg {
+      top: -60%;
+    }
+    .slide:nth-child(2n+1):not(:last-child) .slide__bg {
+      bottom: -50%;
+    }
+    .slide:first-child {
+      padding-top: 14%;
+    }
+    .slide:last-child {
+      padding-bottom: 14%;
+    }
+    .slide:nth-child(2n) {
+      z-index: 1; /* ensure slides overlay correctly */
+    }
+  }
+}
+
+/* Contact */
+
+@media (min-width: 715px){
+  .formMessage{
+    width:40vw;
+  }
+}
+
+.submitButton
+{
+  padding: 10px 20px 11px !important;
+  font-size: 21px !important;
+  background-color: #1f2021;
+  font-weight: bold;
+  text-shadow: 1px 1px #7d8287;
+  color: #ffffff;
+  border-radius: 100px;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  border: 1px solid #7d8287;
+  cursor: pointer;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+}
+
+
+/* Hover effect on gallery images link*/
+
+.container {
+  position: relative;
+
+}
+
+.image {
+  opacity: 1;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 215%;
+  font-family: 'de_valenciaregular', Arial, sans-serif;
+
+}
+
+
+/* Navigation bar with bootstrap */
+
+
+#mainNav {
+  border-color: rgba(34, 34, 34, 0.05);
+  background-color: white;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s; }
+  #mainNav .navbar-brand {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #F05F40;
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; }
+    #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
+      color: #f05f40; }
+      #mainNav .navbar-toggle {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #222222; }
+        #mainNav .navbar-nav > li.nav-item > a.nav-link:focus,
+        #mainNav .navbar-nav > li.nav-item > a.nav-link {
+          font-size: 13px;
+          font-weight: 700;
+          text-transform: uppercase;
+          color: #222222; }
+          #mainNav .navbar-nav > li.nav-item > a.nav-link:focus:hover,
+          #mainNav .navbar-nav > li.nav-item > a.nav-link:hover {
+            color: #F05F40; }
+            #mainNav .navbar-nav > li.nav-item > a.nav-link:focus.active,
+            #mainNav .navbar-nav > li.nav-item > a.nav-link.active {
+              color: #F05F40 !important;
+              background-color: transparent; }
+              #mainNav .navbar-nav > li.nav-item > a.nav-link:focus.active:hover,
+              #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
+                background-color: transparent; }
+                @media (min-width: 992px) {
+                  #mainNav {
+                    border-color: rgba(255, 255, 255, 0.3);
+                    background-color: transparent; }
+                    #mainNav .navbar-brand {
+                      color: rgba(255, 255, 255, 0.7); }
+                      #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
+                        color: white; }
+                        #mainNav .navbar-nav > li.nav-item > a.nav-link,
+                        #mainNav .navbar-nav > li.nav-item > a.nav-link:focus {
+                          color: rgba(255, 255, 255, 0.7); }
+                          #mainNav .navbar-nav > li.nav-item > a.nav-link:hover,
+                          #mainNav .navbar-nav > li.nav-item > a.nav-link:focus:hover {
+                            color: white; }
+                            #mainNav.navbar-shrink {
+                              border-color: rgba(34, 34, 34, 0.05);
+                              background-color: white; }
+                              #mainNav.navbar-shrink .navbar-brand {
+                                font-size: 16px;
+                                color: #F05F40; }
+                                #mainNav.navbar-shrink .navbar-brand:focus, #mainNav.navbar-shrink .navbar-brand:hover {
+                                  color: #f05f40; }
+                                  #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link,
+                                  #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:focus {
+                                    color: #222222; }
+                                    #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:hover,
+                                    #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:focus:hover {
+                                      color: #F05F40; } }
+
+                                      .fontnav{
+                                        font-family: 'de_valenciaregular', Arial, sans-serif;
+                                        font-size: 150%;
+                                      }
+
+                                      .fontnavtitle{
+                                        font-family: 'de_valenciaregular', Arial, sans-serif;
+                                        font-size: 150%;
+                                      }
+
